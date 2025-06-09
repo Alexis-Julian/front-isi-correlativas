@@ -14,21 +14,15 @@ export default function SubjectsTable() {
   const { user } = useAuth()
 
   // Función para verificar si una materia está regularizada
-  const isSubjectRegularized = (subjectId: number) => {
-    return user?.regularizedSubjects?.includes(subjectId) || false
+  const isSubjectRegularized = (subjectCode: number) => {
+    console.log(user)
+    return user?.regularizedSubjects?.includes(subjectCode) || false
   }
 
   // Función para verificar si una materia está aprobada
   const isSubjectApproved = (subjectId: number) => {
     return user?.approvedSubjects?.includes(subjectId) || false
   }
-
-  // Función para obtener nombres de materias por IDs
-  const getSubjectNamesByIds = (ids: number[]) => {
-    return ids
-      .map((id) => `* ${subjects.find((s) => s.id === id)?.name || `Materia ${id}`}`)
-      .join("\n");
-  };
 
   // Función para obtener el color del badge según el año
   const getYearBadgeVariant = (year: number) => {
@@ -106,7 +100,7 @@ export default function SubjectsTable() {
                     </Badge>
                   </TableCell>
                   <TableCell className="text-center">
-                    {isSubjectRegularized(subject.id) ? (
+                    {isSubjectRegularized(subject.code) ? (
                       <CheckCircle className="h-5 w-5 text-green-600 mx-auto" />
                     ) : (
                       <Circle className="h-5 w-5 text-gray-300 mx-auto" />
