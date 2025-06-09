@@ -1,6 +1,6 @@
 import { API_URL } from "@/const";
-import TableSubjects from "./components/TableSubjects";
 import { SubjectDTO } from "@/types/subject.dto";
+import MateriasTable from "@/components/ui/materia-table";
 
 export default async function Home() {
   const res = await fetch(`${API_URL}/api/subjects`, {
@@ -13,9 +13,9 @@ export default async function Home() {
   const subjects: SubjectDTO[] = await res.json();
 
   return (
-    <main className="">
-      <section className="h-full w-[80%] mx-auto">
-        <TableSubjects subjects={subjects} />
+    <main className="overflow-hidden">
+      <section className="h-full overflow-hidden">
+        <MateriasTable subjects={subjects} />
       </section>
     </main>
   );
