@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Baloo_Bhai_2 } from "next/font/google";
 import "./ui/globals.css";
-const geistSans = Geist({
+import MenuNavigation from "@/components/ui/menu-navigation";
+/* const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+ */
+const baloo = Baloo_Bhai_2({
   subsets: ["latin"],
 });
 
@@ -23,9 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${baloo.className} antialiased flex`}>
+        <section className="w-[15%] ">
+          <MenuNavigation />
+        </section>
         {children}
       </body>
     </html>

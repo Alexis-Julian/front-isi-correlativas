@@ -128,3 +128,29 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.shadow-menu {
+  box-shadow: 15px 10px 36px -7px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 15px 10px 36px -7px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 15px 10px 36px -7px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 800;
+}
+h2 {
+  font-size: 24px;
+  font-weight: 800;
+}
+h3 {
+  font-size: 16px;
+  font-weight: 800;
+}
+p {
+  font-size: 16px;
+}
+
+/* .color-background{
+  background-color: #;
+} */
